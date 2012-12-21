@@ -41,7 +41,7 @@ class App < Sinatra::Base
     @result['filler'] = {'number' => 7, 'date' => 'Jan 17 1984 1pm'}
     #puts result.body #.class
     #@listings = result.to_hash['listings'] #['tasks']
-    #result['listings']
+    @result['listings'] = @result['listings'][0...4]
     @result
     erb :home_alert
   end

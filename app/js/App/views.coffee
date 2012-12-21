@@ -35,18 +35,28 @@ roleName = 'PRO'
 sequenceNumber = 'ssl'
 
 class MailTemplateView extends Backbone.View
+	el: '#targetDiv'
 
 	initialize: ->
-		@template = $('#mailerTemplate').html()
+		@template = $('#blue_bar').html()
+		@header_bars_template = Handlebars.compile($('#header_bars').html())
+		@first_listings_template = Handlebars.compile($('#listings_first').html())
 		@
 	render: ->
+		data = @getBootstrappedData()
 		mailTemplate = Handlebars.compile(@template)
-		$(@el).html(mailTemplate(@getBootstrappedData()))
+		#console.log @first_listings_template(listings: 1023)
+		$('#targetDiv').append(mailTemplate(data)).append(@header_bars_template(data))
+		#console.log 
+		
+		#.append(@first_listings_template(data))
+		
+		#$('')
 		@
 	getBootstrappedData: ->
 		data = JSON.parse($('#bootstrap').text())
-		console.log data
-		@
+		#console.log(data['matching_rows'])
+		data
 
 
 
