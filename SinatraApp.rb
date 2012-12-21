@@ -39,9 +39,12 @@ class App < Sinatra::Base
   get '/my_mail' do
     @result = MoveApi.get_listings.to_hash
     @result['filler'] = {'number' => 7, 'date' => 'Jan 17 1984 1pm'}
-    #puts result.body #.class
-    #@listings = result.to_hash['listings'] #['tasks']
     @result['listings'] = @result['listings'][0...4]
+    
+    @result['saved_searches'] = [
+      {:name => 'Dream Houses', :query_string => 'All Houses in Saratoga CA 5 rooms 1 pool close to hiking', :listings => @result['listings'] },
+      {:name => 'Taco Stands', :query_string => 'All Houses that smell LIKE %tacos% ', :listings => @result['listings'] }
+    ]
     @result
     erb :home_alert
   end

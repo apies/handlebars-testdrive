@@ -41,12 +41,13 @@ class MailTemplateView extends Backbone.View
 		@template = $('#blue_bar').html()
 		@header_bars_template = Handlebars.compile($('#header_bars').html())
 		@first_listings_template = Handlebars.compile($('#listings_first').html())
+		@saved_searches_template = Handlebars.compile($('#saved_searches').html())
 		@
 	render: ->
 		data = @getBootstrappedData()
 		mailTemplate = Handlebars.compile(@template)
 		#console.log @first_listings_template(listings: 1023)
-		$('#targetDiv').append(mailTemplate(data)).append(@header_bars_template(data))
+		$('#targetDiv').append(mailTemplate(data)).append(@header_bars_template(data)).append(@saved_searches_template(data))
 		#console.log 
 		
 		#.append(@first_listings_template(data))
