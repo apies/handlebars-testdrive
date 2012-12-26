@@ -6,6 +6,7 @@ require 'coffee_script'
 require 'yaml'
 CONFIG = YAML.load(File.read(File.expand_path('./config/application.yml')))
 require './models/move_api_auth.rb'
+require 'handlebars'
 
 class App < Sinatra::Base
   
@@ -46,7 +47,24 @@ class App < Sinatra::Base
       {:name => 'Taco Stands', :query_string => 'All Houses that smell LIKE %tacos% ', :listings => @result['listings'] }
     ]
     @result
-    erb :home_alert
+    erb :home_alert_composite
+  end
+
+  get '/my_server_mail' do
+    @result = MoveApi.get_listings.to_hash
+    @result['filler'] = {'number' => 7, 'date' => 'Jan 17 1984 1pm'}
+    @result['listings'] = @result['listings'][0...4]
+    
+    @result['saved_searches'] = [
+      {:name => 'Dream Houses', :query_string => 'All Houses in Saratoga CA 5 rooms 1 pool close to hiking', :listings => @result['listings'] },
+      {:name => 'Taco Stands', :query_string => 'All Houses that smell LIKE %tacos% ', :listings => @result['listings'] }
+    ]
+    @result
+
+    handlebars = Handlebars::Context.new
+    template = handlebars.compile(File.read('./templates/home_alert.handlebars'))
+    template.call(@result)
+
   end
   
   run!

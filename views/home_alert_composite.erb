@@ -1,0 +1,751 @@
+<style>
+	.yshortcuts {color:none;}
+	html { -webkit-text-size-adjust:none; }
+</style>
+
+<script type="text/json" id="bootstrap">
+   <%= @result.to_json %> 
+</script>
+<script type="text/javascript">
+  $(function () {
+    data = JSON.parse($('#bootstrap').text());
+    console.log(data);
+	mailView = new app.MailTemplateView({el:'body'});
+	mailView.render();
+  });
+</script>
+
+
+    <!-- START TEMPLATE -->
+	<div id="targetDiv"></div>
+	<script id='mail_template' type="text/x-handlebars-template">
+    <center>
+<table cellpadding="0" cellspacing="0" width="100%" bgcolor="#cccccc" height="100%">
+<tr><td align="center" valign="top">
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td width="20"></td>
+<td align="left" valign="top">
+    <!-- logo and preheader -->
+    <table cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="115" align="left" valign="bottom"><img src="images/logo.gif" width="115" height="62" style="display:block; border:0;" alt="Realtor.com" /></td>
+        <td width="515" align="left" valign="bottom">
+            <table cellpadding="0" cellspacing="0">
+                <tr><td width="515" align="left">
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:15px; color:#7f7f7f; margin-left:17px; margin-bottom:10px;">
+                        Please do not reply to this message. The reply-to address is automated. Trouble seeing this<br />
+                        email? <a href="#" style="color:#4679b8; text-decoration:none;">&raquo; <u>View online</u></a> | Please add <font style="color:#4679b8;">email@consumer.realtor.com</font> to your safe senders list.
+                    </div>
+                </td></tr>
+                <tr><td width="515" align="right">
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#999999; margin-right:16px; margin-bottom:3px;">
+                        <a href="#" style="color:#4679b8; text-decoration:underline;">Update My Profile</a>&nbsp;&nbsp;|&nbsp;
+                        <a href="#" style="color:#4679b8; text-decoration:underline;">REALTOR.com&reg;</a>
+                    </div>
+                </td></tr>
+            </table>
+        </td>
+    </tr>
+    </table><!-- logo and preheader -->
+    <!-- Home Alerts blue bar -->
+	    <table cellpadding="0" cellspacing="0" width="630" bgcolor="#6494ca">
+	    <tr>
+	    	<td height="36" align="left">
+	        	<div style="font-family:Arial, Helvetica, sans-serif; font-size:17px; line-height:20px; color:#ffffff; font-weight:bold; margin-left:15px;">
+					You Have {{ filler.number }} New Home Alerts
+				</div>
+	        </td>
+	        <td align="right">
+	        	 <div style="font-family:Arial, Helvetica, sans-serif; font-size:10px; line-height:12px; color:#ffffff; margin-right:16px;">
+				 	by REALTOR.com<span style="font-size: 70%; vertical-align: top;line-height:10px;">&reg;</span>
+				 </div>
+	        </td>
+	    </tr>
+	    <tr><td height="1" colspan="2" bgcolor="#ffffff"></td></tr>
+	    </table>
+        <!-- dashboard -->
+       
+	<!-- Home Alerts blue bar -->
+
+    <!-- SAVED LISTINGS -->
+    <table cellpadding="0" cellspacing="0" bgcolor="#faf8f5">
+    <tr><td width="630" align="left" valign="top">
+	<table cellpadding="0" cellspacing="0"><tr><td width="630" height="20"><img src="images/dash_top_grad.gif" width="630" height="20" style="display:block;" /></td></tr></table>
+	<table cellpadding="0" cellspacing="0" width="630">
+    	<tr>
+        	<td align="left">
+            	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:20px; color:#999999; margin-left:15px;">
+                	<b style="font-size:16px; color:#666666;">Saved Listing Alerts</b> updated on {{ filler.date }}
+                </div>
+            </td>
+            <td align="right">
+            	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#517fba; margin-right:15px;">
+                	<a href="#" style="color:#517fba; text-decoration:underline;">Manage</a>&nbsp;&nbsp;|&nbsp;
+                    <a href="#" style="color:#517fba; text-decoration:underline;">View All</a>
+                </div>
+            </td>
+        </tr>
+        <tr><td height="8" colspan="2"></td></tr>
+    </table>
+    <div style="margin-left:15px;">
+    <table cellpadding="0" cellspacing="0" bgcolor="#e6ddd0">
+    <tr><td height="1" colspan="3"></td></tr>
+    <tr>
+    	<td width="1"></td>
+        <td background="images/dash_bg.gif" width="600" height="36" align="left" bgcolor="#fffbed">
+        	<table cellpadding="0" cellspacing="0"><tr>
+            	<td bgcolor="#e9e5d7">
+                	<table cellpadding="0" cellspacing="0">
+                    <tr><td height="1" bgcolor="#d8d0c3"></td></tr>
+                    <tr><td height="1" bgcolor="#ddd6c9"></td></tr>
+                    <tr><td height="1" bgcolor="#e2dbce"></td></tr>
+                    <tr><td height="1" bgcolor="#e7e1d3"></td></tr>
+                    <tr><td height="32">
+                        <div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:18px; color:#4679b8; margin-left:10px; margin-right:5px; margin-bottom:4px;">
+                            <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{ filler.number }}</b>&nbsp;<u>LISTINGS&nbsp;UPDATES</u></a>
+                        </div>
+                    </td></tr>
+                    </table>
+                </td>
+                <td width="10" bgcolor="#e9e5d7"><img src="images/dash_divider.gif" width="10" height="36" style="display:block;" /></td>
+                <td>
+                	<div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:18px; color:#4679b8; margin-left:10px; margin-right:5px;">
+                    	<a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{ filler.number }}</b>&nbsp;<u>SOLD</u></a>&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                        <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{ filler.number }}</b>&nbsp;<u>PRICE&nbsp;REDUCED</u></a>&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                        <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{ filler.number }}</b>&nbsp;<u>LISTINGS&nbsp;UPDATES</u></a>
+                    </div>
+                </td>
+            </tr></table>
+        </td>
+        <td width="1"></td>
+    </tr>
+    <tr><td height="1" colspan="3"></td></tr>
+    </table>
+    </div><!-- SAVED LISTINGS -->
+    <!-- gray rule (with space top / bot) -->
+    <table cellpadding="0" cellspacing="0">
+    	<tr><td height="16"></td></tr>
+        <tr><td height="1"><img src="images/rule_grey_630x1.gif" width="630" height="1" style="display:block;" /></td></tr>
+        <tr><td height="16"></td></tr>
+    </table><!-- gray rule (with space top / bot) -->
+    <!-- SAVED SEARCH -->
+    <table cellpadding="0" cellspacing="0" width="630">
+    	<tr>
+        	<td align="left">
+            	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:20px; color:#999999; margin-left:15px;">
+                	<b style="font-size:16px; color:#666666;">Saved Listing Alerts</b> updated on 6pm 7/31/10
+                </div>
+            </td>
+            <td align="right">
+            	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#517fba; margin-right:15px;">
+                    <a href="#" style="color:#517fba; text-decoration:underline;">View All</a>
+                </div>
+            </td>
+        </tr>
+        <tr><td height="7" colspan="2"></td></tr>
+    </table>
+    <div style="margin-left:15px;">
+    <table cellpadding="0" cellspacing="0" bgcolor="#e6ddd0">
+    <tr><td height="1" colspan="3"></td></tr>
+    <tr>
+    	<td width="1"></td>
+        <td background="images/dash_bg.gif" width="600" height="36" align="left" bgcolor="#fffbed">
+        	<table cellpadding="0" cellspacing="0"><tr>
+            	<td bgcolor="#e9e5d7">
+                	<table cellpadding="0" cellspacing="0">
+                    <tr><td height="1" bgcolor="#d8d0c3"></td></tr>
+                    <tr><td height="1" bgcolor="#ddd6c9"></td></tr>
+                    <tr><td height="1" bgcolor="#e2dbce"></td></tr>
+                    <tr><td height="1" bgcolor="#e7e1d3"></td></tr>
+                    <tr><td height="32">
+                        <div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:18px; color:#4679b8; margin-left:10px; margin-right:5px; margin-bottom:4px;">
+                            <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{filler.number}}</b>&nbsp;<u>LISTINGS&nbsp;UPDATES</u></a>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;
+                            <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{filler.number}}</b>&nbsp;<u>NEW&nbsp;LISTINGS</u></a>
+                        </div>
+                    </td></tr>
+                    </table>
+                </td>
+                <td width="10" bgcolor="#e9e5d7"><img src="images/dash_divider.gif" width="10" height="36" style="display:block;" /></td>
+                <td>
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:18px; color:#4679b8; margin-left:10px; margin-right:5px;">
+                        <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{filler.number}}</b>&nbsp;<u>SOLD</u></a>&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                        <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">{{filler.number}}</b>&nbsp;<u>PRICE&nbsp;REDUCED</u></a>&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                        <a href="#" style="color:#4679b8; text-decoration:none;"><b style="font-size:16px;">6</b>&nbsp;<u>LISTINGS&nbsp;UPDATES</u></a>
+                    </div>
+                </td>
+            </tr></table>
+        </td>
+        <td width="1"></td>
+    </tr>
+    <tr><td height="1" colspan="3"></td></tr>
+    </table>
+    </div><!-- SAVED SEARCH -->
+    <table cellpadding="0" cellspacing="0"><tr><td width="1" height="7"></td></tr></table>
+           
+    <!-- Open Houses -->
+    <table cellpadding="0" cellspacing="0">
+    <tr>
+    	<td width="517" align="left" valign="top">
+        	<table cellpadding="0" cellspacing="0"><tr><td width="1" height="7"></td></tr></table>
+        	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#666666; margin-left:25px; margin-bottom:8px;">
+            	Open Houses this weekend
+            </div>
+                   
+            <!-- repeat width="130" <td> to add more entries (up to 3x) -->
+            <table cellpadding="0" cellspacing="0"><tr>
+            	<td width="25"></td>
+                <td width="130" align="left">
+                	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#666666;"><a href="#" style="color:#4679b8; text-decoration:none;"><font style="font-size:10px; color:#666666;">&gt;</font>&nbsp;&nbsp;<u>10 Characters Max</u></a></div>
+                </td>
+                <td width="130" align="left">
+                	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#666666;"><a href="#" style="color:#4679b8; text-decoration:none;"><font style="font-size:10px; color:#666666;">&gt;</font>&nbsp;&nbsp;<u>I&rsquo;ll Setle for this</u></a></div>
+                </td>
+                <td width="130" align="left">
+                	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#666666;"><a href="#" style="color:#4679b8; text-decoration:none;"><font style="font-size:10px; color:#666666;">&gt;</font>&nbsp;&nbsp;<u>Another Listing</u></a></div>
+                </td>
+            </tr></table>
+        </td>
+    	<td width="113" align="right" valign="bottom"><img src="images/dash_01.jpg" width="113" height="53" style="display:block;" /></td>
+    </tr>
+    <tr><td height="22" colspan="2"><img src="images/dash_02.jpg" width="630" height="22" style="display:block;" /></td></tr>
+    </table><!-- Open Houses -->
+           
+</td></tr>
+</table><!-- dashboard -->
+       
+<!-- Saved Listing Header -->
+<table cellpadding="0" cellspacing="0">
+<tr>
+	<td width="213" align="left" valign="bottom">
+    	<table cellpadding="0" cellspacing="0" bgcolor="#faf8f5"><tr>
+        	<td width="195" align="center">
+            	<div style="font-family:Arial, Helvetica, sans-serif; font-size:17px; line-height:20px; color:#666666; font-weight:bold;">Saved Listings (23)</div>
+            </td>
+        	<td width="18"><img src="images/header_right.gif" width="18" height="27" style="display:block;" /></td>
+        </tr></table>
+    </td>
+    <td width="417" height="47" align="right">
+    	<!-- Ad -->
+        <table cellpadding="0" cellspacing="0" bgcolor="#e8e8e8" background="images/ad_bg.gif" style="background-repeat:no-repeat;">
+        <tr>
+        	<td width="155" align="right">
+            	<div style="font-family:Arial, Helvetica, sans-serif; font-size:10px; line-height:14px; color:#4679b8; margin-right:3px;">
+                	<a href="#" style="color:#4679b8; text-decoration:underline;">REALTOR.com&reg;<br />App for your iPhone</a>
+                </div>
+            </td>
+        	<td width="33"><a href="#"><img src="images/ad_img.jpg" width="33" height="33" style="display:block; border:0;" /></a></td>
+        </tr>
+        </table><!-- Ad -->
+    </td>
+</tr>
+</table><!-- Saved Listing Header -->
+       
+<!-- Saved Listing Body -->
+<table cellpadding="0" cellspacing="0">
+<tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+       	
+    <!-- listing updates arrow -->
+	<table cellpadding="0" cellspacing="0">
+    <tr><td height="25" colspan="4"></td></tr>
+    <tr>
+    	<td width="15"></td>
+    	<td width="168" bgcolor="#abbe91" align="left">
+        	<!-- adjust the above width to change size -->
+        	<div style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#ffffff; font-weight:bold; margin-left:11px;">{{filler.number}} Listing Updates</div>
+        </td>
+    	<td width="8" bgcolor="#abbe91"><img src="images/green_arr.gif" width="8" height="27" style="display:block;" /></td>
+        <td width="439" align="left">
+        	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#858585; margin-left:10px;">
+            	<b>{{filler.number}}</b> Sold&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                <b>{{filler.number}}</b> Price Reduced&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                <b>{{filler.number}}</b> Open House&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                <a href="#" style="color:#477aba; text-decoration:underline;">View All</a>
+            </div>
+        </td>
+    </tr>
+    <tr><td height="15" colspan="4"></td></tr>
+    </table><!-- listing updates arrow -->
+	
+	
+    <!-- house listings -->
+    <div style="margin-left:15px;"><table cellpadding="0" cellspacing="0">
+	<tr>
+    {{#each listings}}
+     
+	<td width="140" align="left" valign="top">
+    	<!-- search result module -->
+    	<div><a href="#"><img src="{{this.photo.href}}" width="140" height="105" style="display:inline; border:0;" /></a></div>
+        <table cellpadding="0" cellspacing="0"><tr><td width="140" height="13"><!-- optional special feature gradient --><img src="images/spec_feat_grad.gif" width="140" height="13" style="display:block;" /></td></tr></table>
+        <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-bottom:4px;">
+        	<a href="#" style="font-size:13px; color:#477aba; text-decoration:underline;">{{this.address.line}}</a><br />
+            {{this.address.city}}, {{this.address.state}}<br />
+            <b style="font-size:13px; color:#3f9301;">{{this.price}}</b><br />
+            <font style="color:#808080;">{{this.beds}} Bed, {{this.baths}} Bath</font>
+        </div>
+        <!-- price reduced tag -->
+        <table cellpadding="0" cellspacing="0">
+        	<tr><td bgcolor="#3f9200"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">PRICE&nbsp;REDUCED</div></td></tr>
+            <tr><td height="5"></td></tr>
+        </table><!-- price reduced tag -->
+                   
+        <!-- open house module -->
+        <table cellpadding="0" cellspacing="0">
+        	<tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+        	<tr>
+            	<td width="1" bgcolor="#ffebb0"></td>
+            	<td width="138" bgcolor="#fffbed">
+                    <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                        <b>Open House:</b><br />
+                        {{this.list.date}}
+                    </div>
+            	</td>
+                <td width="1" bgcolor="#ffebb0"></td>
+            </tr>
+            <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+        </table><!-- open house module -->
+        <!-- search result module -->
+       
+    </td>
+               
+       
+    </td>
+	<td width="10"></td>
+    {{/each}}
+	</tr>
+	</table></div><!-- house listings -->
+           
+	    <table cellpadding="0" cellspacing="0"><tr><td width="1" height="12"></td></tr></table>
+           
+	    <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#4679b8; margin-left:15px;">
+			<a href="#" style="color:#4679b8; text-decoration:underline;">View Your <b>{{listings.count }}</b> Saved Listings</a>
+		</div>
+           
+	    <table cellpadding="0" cellspacing="0"><tr><td width="1" height="37"></td></tr></table>
+		</td></tr>
+		<tr><td height="20"></td></tr>
+		</table><!-- Saved Listing Body -->
+       
+       
+		<!-- Saved Searches header -->
+		<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="630" align="left" valign="bottom">
+		    	<table cellpadding="0" cellspacing="0" bgcolor="#faf8f5"><tr>
+		        	<td width="195" align="center">
+		            	<div style="font-family:Arial, Helvetica, sans-serif; font-size:17px; line-height:20px; color:#666666; font-weight:bold;">Saved Searches ({{filler.number}})</div>
+		            </td>
+		        	<td width="18"><img src="images/header_right.gif" width="18" height="27" style="display:block;" /></td>
+		        </tr></table>
+		    </td>
+		</tr>
+		</table><!-- Saved Searches header -->
+       
+		<!-- Saved Searches - New Listings Body -->
+		<table cellpadding="0" cellspacing="0">
+		<tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+       	
+		    <!-- new listings arrow -->
+			<table cellpadding="0" cellspacing="0">
+		    <tr><td height="25" colspan="4"></td></tr>
+		    <tr>
+		    	<td width="15"></td>
+		    	<td width="158" bgcolor="#dfb871" align="left">
+		        	<!-- adjust the above width to change size -->
+		        	<div style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#ffffff; font-weight:bold; margin-left:11px;">
+						{{filler.number}} New Listings
+					</div>
+		        </td>
+		    	<td width="8" bgcolor="#dfb871"><img src="images/yellow_arr.gif" width="8" height="27" style="display:block;" /></td>
+		        <td width="449" align="left">
+		        	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#858585; margin-left:10px;">
+		            	<b>{{filler.number}}</b> Foreclosure&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+		                <b>{{filler.number}}</b> Open House&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+		                <a href="#" style="color:#477aba; text-decoration:underline;">View All</a>
+		            </div>
+		        </td>
+		    </tr>
+		    <tr><td height="12" colspan="4"></td></tr>
+		    </table><!-- new listings arrow -->
+            {{#each saved_searches}}
+            <!-- single search new listings -->
+            <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-left:25px; margin-bottom:6px;">
+            	&gt;&nbsp;&nbsp;<a href="#" style="color:#4679b8; text-decoration:underline;"><b>{{this.listings.length}}</b> New Listings</a> from <font style="color:#666666;">{{this.name}}</font>, {{this.query_string}}
+            </div><!-- single search new listings -->
+            {{/each}}
+           
+            <table cellpadding="0" cellspacing="0"><tr><td width="1" height="8"></td></tr></table>
+           
+            <!-- house listings -->
+            <div style="margin-left:15px;"><table cellpadding="0" cellspacing="0">
+            <tr>
+                {{#each listings}}
+            	<td width="140" align="left" valign="top">
+                	<!-- search result module -->
+                	<div><a href="#"><img src="{{this.photo.href}}" width="140" height="105" style="display:inline; border:0;" /></a></div>
+                    <table cellpadding="0" cellspacing="0"><tr><td width="140" height="13"><!-- optional special feature gradient --></td></tr></table>
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-bottom:4px;">
+                    	<a href="#" style="font-size:13px; color:#477aba; text-decoration:underline;">{{this.address.line}}</a><br />
+                        {{this.address.city}}, {{this.address.state}}<br />
+                        <b style="font-size:13px; color:#3f9301;">{{this.price}}</b><br />
+                        <font style="color:#808080;">{{this.beds}} Bed, {{this.baths}} Bath</font><br />
+                        <a href="#" style="color:#4679b8; text-decoration:underline;">Save Listing</a><br />
+                        <font style="color:#666666;">{{this.address.line}}</font>
+                    </div>
+                   
+                    <!-- open house module -->
+                    <table cellpadding="0" cellspacing="0">
+                    	<tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                    	<tr>
+                        	<td width="1" bgcolor="#ffebb0"></td>
+                        	<td width="138" bgcolor="#fffbed">
+                                <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                                <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                                    <b>Open House:</b><br />
+                                    {{filler.date}}
+                                </div>
+                        	</td>
+                            <td width="1" bgcolor="#ffebb0"></td>
+                        </tr>
+                        <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                    </table><!-- open house module -->
+                    <!-- search result module -->
+                </td>
+                <td width="10"></td>
+                {{/each}}
+              
+       
+            </tr>
+            </table></div><!-- house listings -->
+            <!-- gray rule (with space top) -->
+           <table cellpadding="0" cellspacing="0">
+           	<tr><td height="24"></td></tr>
+               <tr><td height="1"><img src="images/rule_grey_630x1.gif" width="630" height="1" style="display:block;" /></td></tr>
+           </table><!-- gray rule (with space top) -->
+       </td></tr>
+       </table><!-- Saved Searches - New Listings Body -->
+       
+       <!-- Saved Searches - Recently Sold Body -->
+       <table cellpadding="0" cellspacing="0">
+       <tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+       	
+           <!-- listing updates arrow -->
+       	<table cellpadding="0" cellspacing="0">
+           <tr><td height="15" colspan="4"></td></tr>
+           <tr>
+           	<td width="15"></td>
+           	<td width="168" bgcolor="#abbe91" align="left">
+               	<!-- adjust the above width to change size -->
+               	<div style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#ffffff; font-weight:bold; margin-left:11px;">{{filler.number}} Listing Updates</div>
+               </td>
+           	<td width="8" bgcolor="#abbe91"><img src="images/green_arr.gif" width="8" height="27" style="display:block;" /></td>
+               <td width="439" align="left">
+               	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#858585; margin-left:10px;">
+                   	<b>{{filler.number}}</b> Price Reduced&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                   	<b>{{filler.number}}</b> Foreclosure&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                       <b>{{filler.number}}</b> Open House&nbsp;&nbsp;&nbsp;<font style="font-size:16px; color:#cccccc;">|</font>&nbsp;&nbsp;
+                       <a href="#" style="color:#477aba; text-decoration:underline;">View All</a>
+                   </div>
+               </td>
+           </tr>
+           <tr><td height="12" colspan="4"></td></tr>
+           </table><!-- listing updates arrow -->
+           {{#each saved_searches}}
+           <!-- single search listing update -->
+           <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-left:25px; margin-bottom:6px;">
+               &gt;&nbsp;&nbsp;<a href="#" style="color:#4679b8; text-decoration:underline;"><b>{{this.listings.length}}</b> Listings Updates</a> 
+			from <font style="color:#666666;">{{this.name}}</font>, {{this.query_string}}
+           </div><!-- single search listing update -->
+           {{/each}}
+           <table cellpadding="0" cellspacing="0"><tr><td width="1" height="8"></td></tr></table>
+                    
+           <!-- house listings -->
+           <div style="margin-left:15px;"><table cellpadding="0" cellspacing="0">
+           <tr>
+                           
+               {{#each listings}}
+           	<td width="140" align="left" valign="top">
+               	<!-- search result module -->
+               	<div><a href="#"><img src="{{this.photo.href}}" width="140" height="105" style="display:inline; border:0;" /></a></div>
+                   <table cellpadding="0" cellspacing="0"><tr><td width="140" height="13"><!-- optional special feature gradient --></td></tr></table>
+                   <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-bottom:4px;">
+                   	<a href="#" style="font-size:13px; color:#477aba; text-decoration:underline;">{{this.address.line}} </a><br />
+                       {{this.address.city}}, {{this.address.state}}<br />
+                       <b style="font-size:13px; color:#3f9301;">{{this.price}}</b><br />
+                       <font style="color:#808080;">{{this.beds}} Bed, {{this.baths}} Bath</font><br />
+                       <a href="#" style="color:#4679b8; text-decoration:underline;">Save Listing</a><br />
+                       <font style="color:#666666;">10 characters</font>
+                   </div>
+                           
+                   <!-- price reduced tag -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td bgcolor="#3f9200"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">PRICE&nbsp;REDUCED</div></td></tr>
+                       <tr><td height="5"></td></tr>
+                   </table><!-- price reduced tag -->
+                            
+                   <!-- foreclosure tag -->
+                   <table cellpadding="0" cellspacing="0">
+                   	<tr><td bgcolor="#d17e47"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">FORECLOSURE</div></td></tr>
+                       <tr><td height="5"></td></tr>
+                   </table><!-- foreclosure tag -->
+                           
+                   <!-- new photo module -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td height="1" colspan="3" bgcolor="#e6e6e6"></td></tr>
+                       <tr>
+                           <td width="1" bgcolor="#e6e6e6"></td>
+                           <td width="138" bgcolor="#f4f3fb">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#525767; font-weight:bold; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                                   New Photo
+                               </div>
+                           </td>
+                           <td width="1" bgcolor="#e6e6e6"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#e6e6e6"></td></tr>
+                   </table><!-- new photo module -->
+                           
+                   <!-- additional attributes -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb1"></td></tr>
+                       <tr>
+                           <td width="1" bgcolor="#ffebb1"></td>
+                           <td width="138" bgcolor="#fffbed">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="2"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   Virtual Tour<br />
+                               </div>
+                                   <table cellpadding="0" cellspacing="0"><tr><td width="138" height="1"><img src="images/attribute_divider.gif" width="138" height="1" style="display:block;" /></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   New Photo<br />
+                               </div>
+                                   <table cellpadding="0" cellspacing="0"><tr><td width="138" height="1"><img src="images/attribute_divider.gif" width="138" height="1" style="display:block;" /></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   <br />
+                               </div>
+                                   <!-- additional attributes go here -->
+                           </td>
+                           <td width="1" bgcolor="#ffebb1"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb1"></td></tr>
+                   </table><!-- additional attributes -->
+                            
+                   <!-- open house module -->
+                   <table cellpadding="0" cellspacing="0">
+                   	<tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                   	<tr>
+                       	<td width="1" bgcolor="#ffebb0"></td>
+                       	<td width="138" bgcolor="#fffbed">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                                   <b>Open House:</b><br />
+                                   Sat 8/7, 2 PM - 4 PM
+                               </div>
+                       	</td>
+                           <td width="1" bgcolor="#ffebb0"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                   </table><!-- open house module -->
+                   <!-- search result module -->
+               </td>
+               <td width="10"></td>
+              {{/each}}
+              </tr>
+              </table></div><!-- house listings -->
+              <!-- gray rule (with space top) -->
+              
+
+        
+              <table cellpadding="0" cellspacing="0">
+			   
+              	<tr><td height="24"></td></tr>
+                <tr><td height="1"><img src="images/rule_grey_630x1.gif" width="630" height="1" style="display:block;" /></td></tr>
+              </table><!-- gray rule -->
+	     
+			  
+	          </table><!-- Saved Searches - Listing Updates Body -->
+       
+	          <!-- Saved Searches - Recently Sold Body -->
+	          <table cellpadding="0" cellspacing="0">
+	          <tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+       	
+	              <!-- recently sold arrow -->
+	          	<table cellpadding="0" cellspacing="0">
+	              <tr><td height="15" colspan="4"></td></tr>
+	              <tr>
+	              	<td width="15"></td>
+	              	<td width="158" bgcolor="#a6a6a6" align="left">
+	                  	<!-- adjust the above width to change size -->
+	                  	<div style="font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:18px; color:#ffffff; font-weight:bold; margin-left:11px;">
+						{{filler.number}} Recently Sold
+						</div>
+	                  </td>
+	              	<td width="8" bgcolor="#a6a6a6"><img src="images/grey_arr.gif" width="8" height="27" style="display:block;" /></td>
+	                  <td width="449" align="left">
+	                  	<div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:14px; color:#858585; margin-left:10px;">
+	                          <a href="#" style="color:#477aba; text-decoration:underline;">View All</a>
+	                      </div>
+	                  </td>
+	              </tr>
+	              <tr><td height="12" colspan="4"></td></tr>
+              </table><!-- recently sold arrow -->
+              {{#each saved_searches}}
+              <!-- single search listing update -->
+              <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-left:25px; margin-bottom:6px;">
+                  &gt;&nbsp;&nbsp;<a href="#" style="color:#4679b8; text-decoration:underline;"><b>{{this.listings.length}}</b> Recently Sold</a> from <font style="color:#666666;">{{this.name}}</font>, {{this.query_string}}
+              </div><!-- single search listing update -->
+              {{/each}}
+			  
+              <table cellpadding="0" cellspacing="0"><tr><td width="1" height="8"></td></tr></table>
+           
+              <!-- house listings -->
+              <div style="margin-left:15px;"><table cellpadding="0" cellspacing="0">
+              <tr>
+   		   {{#each listings}}
+              	<td width="140" align="left" valign="top">
+                  	<!-- search result module -->
+                      <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-bottom:4px;">
+                      	<a href="#" style="font-size:13px; color:#477aba; text-decoration:underline;">{{this.address.line}}</a><br />
+                          {{this.address.city}}, {{this.address.state}}<br />
+                          <b style="font-size:13px; color:#ff0000;">Sold for {{this.price }} </b><br />
+                          <font style="font-size:11px; color:#a9a9a9;">on {{this.list_date}}</font><br />
+                          <font style="color:#808080;">{{this.beds}} Bed, {{listing.baths}} Bath</font><br />
+                          <font style="color:#666666;">{{this.agent.name}}</font>
+                      </div>
+                   
+                      <!-- search result module -->
+       
+                  </td>
+   			   {{/each}}
+          
+              </tr>
+              </table></div><!-- house listings -->
+           
+              <table cellpadding="0" cellspacing="0"><tr><td width="1" height="15"></td></tr></table>
+          </td></tr>
+          </table><!-- Saved Searches - Recently Sold Body -->
+       
+          <!-- Saved Searches - Current Searches Body **optional ? ** -->
+          <table cellpadding="0" cellspacing="0">
+          <tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+       	
+          	<div style="margin-left:15px;"><table cellpadding="0" cellspacing="0">
+              <tr><td height="24" colspan="3"></td></tr>
+              <tr><td height="1" colspan="3" bgcolor="#e5e6de"></td></tr>
+              <tr>
+                  <td width="1" bgcolor="#e5e6de"></td>
+              	<td width="598" bgcolor="#f5f6f0" align="left" valign="top">
+                  	<table cellpadding="0" cellspacing="0"><tr><td width="1" height="10"></td></tr></table>
+                   
+                  	<div style="font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:16px; color:#333333; font-weight:bold; margin-left:12px; margin-bottom:14px;">Current Searches (4)</div>
+                    <!-- single search listing update -->
+                    {{#each saved_searches}}
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-left:26px; margin-bottom:6px;">
+                        <font style="font-size:10px;">&gt;</font>&nbsp;&nbsp;<font style="color:#666666;">{{this.name}}</font>, {{this.query_string}} ...&nbsp;
+                        <font style="color:#e88d32;">(4 updates)</font>&nbsp;&nbsp;I&nbsp;
+                        <a href="#" style="color:#4679b9; text-decoration:underline;">View</a>&nbsp;&nbsp;I&nbsp;
+                        <a href="#" style="color:#4679b9; text-decoration:underline;">Edit Note</a>&nbsp;&nbsp;I&nbsp;
+                        <a href="#" style="color:#4679b9; text-decoration:underline;">Remove</a>
+                        <!-- optional notes: remove text to collapse -->
+                        <div style="font-size:11px; margin-left:15px;">&bull; Notes: Lorem Ipsum...</div>
+                        <!-- optional notes -->
+                    </div><!-- single search listing update -->
+                    {{/each}}
+                    <table cellpadding="0" cellspacing="0"><tr><td width="1" height="10"></td></tr></table>
+                </td>
+                <td width="1" bgcolor="#e5e6de"></td>
+            </tr>
+            <tr><td height="1" colspan="3" bgcolor="#e5e6de"></td></tr>
+            </table></div>
+           
+            <!-- gray rule (with space top) -->
+            <table cellpadding="0" cellspacing="0">
+            	<tr><td height="24"></td></tr>
+                <tr><td height="1"><img src="images/rule_grey_630x1.gif" width="630" height="1" style="display:block;" /></td></tr>
+            </table><!-- gray rule (with space top) -->
+        </td></tr>
+     </table><!-- Saved Searches - Current Searches Body **optional ? ** -->
+         <!-- END TEMPLATE -->
+    <!-- ads module -->
+    <table cellpadding="0" cellspacing="0">
+    <tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+        <table cellpadding="0" cellspacing="0"><tr><td width="1" height="15"></td></tr></table>
+        <!-- Ad 1: 300x250 -->
+        <!-- Ad 2: 267x250 -->
+        <div style="margin-left:15px;"><table cellpadding="0" cellspacing="0">
+        <tr><td height="9" colspan="5"><img src="images/ad_border_top.gif" width="600" height="9" style="display:block;" /></td></tr>
+        <tr>
+            <td width="8"><img src="images/ad_border_left.gif" width="8" height="250" style="display:block;" /></td>
+            <td width="300"><a href="#"><img src="images/ad_img1.jpg" width="300" height="250" style="display:block; border:0;" alt="Starting a Remodel? Here's how to get through the chaos of remodeling. Learn" /></a></td>
+            <td width="17"><img src="images/ad_border_mid.gif" width="17" height="250" style="display:block;" /></td>
+            <td width="267"><a href="#"><img src="images/ad_img2.jpg" width="267" height="250" style="display:block; border:0;" alt="Phone. Home. Search the most homes for sale wherever you are. Get the App" /></a></td>
+            <td width="8"><img src="images/ad_border_right.gif" width="8" height="250" style="display:block;" /></td>
+        </tr>
+        <tr><td height="10" colspan="5"><img src="images/ad_border_bot.gif" width="600" height="10" style="display:block;" /></td></tr>
+        </table></div>
+        <!-- gray rule (with space top) -->
+        <table cellpadding="0" cellspacing="0">
+            <tr><td height="18"></td></tr>
+            <tr><td height="1"><img src="images/rule_grey_630x1.gif" width="630" height="1" style="display:block;" /></td></tr>
+        </table><!-- gray rule (with space top) -->
+    </td></tr>
+    </table><!-- ads module -->
+    
+    <!-- footer module -->
+    <table cellpadding="0" cellspacing="0">
+    <tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+        <table cellpadding="0" cellspacing="0"><tr><td width="1" height="15"></td></tr></table>
+        <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:16px; color:#5f5046; margin-left:15px; margin-right:25px;">
+            You are receiving this email because you signed up for property update alerts from <a href="#" style="color:#4679b8; text-decoration:underline;">REALTOR.com&reg;</a>. To unsubscribe or update your email preferences, please click <a href="#" style="color:#4679b8; text-decoration:underline;">here</a>.
+            <br /><br />
+            REALTORS&reg; and REALTOR.com&reg; are registered trademarks of the NATIONAL ASSOCIATION OF REALTORS&reg; and are used with its permission. These and all other trademarks used in this work are the property of their respective owners. The information in this work is believed reliable but is not warranted or guaranteed, is general in nature and not based on knowledge of specific circumstances, and should be independently verified in concert with your tax, technical, legal, real estate, investment, accounting and/or other professional advisors prior to use. Individual results may vary. 
+            <br /><br />
+            &copy; 2010 Move Inc. All rights reserved.  
+            <br /><br />
+            <a href="#" style="color:#4679b8; text-decoration:underline;">Terms of Use</a>&nbsp;|
+            <a href="#" style="color:#4679b8; text-decoration:underline;">Privacy Policy</a>&nbsp;|
+            <a href="#" style="color:#4679b8; text-decoration:underline;">Equal Housing Opportunity</a>&nbsp;|
+            <a href="#" style="color:#4679b8; text-decoration:underline;">Unsubscribe or Update Email Preferences</a>
+        </div>
+        <table cellpadding="0" cellspacing="0"><tr><td width="1" height="15"></td></tr></table>
+    </td></tr>
+    </table><!-- footer module -->
+    
+    <!-- move inc info module -->
+    <table cellpadding="0" cellspacing="0">
+    <tr><td width="630" align="left" valign="top" bgcolor="#faf8f5">
+        <table cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="11"></td>
+            <td width="609" height="30" align="center" bgcolor="#ffffff">
+                <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#555555;">
+                    Move, Inc. | Attn: Marketing Department | 30700 Russell Ranch Road | Westlake Village, CA 91362 | Call: 805-557-2300
+                </div>
+            </td>
+        </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0"><tr><td width="1" height="30"></td></tr></table>
+    </td></tr>
+    <tr><td height="20"></td></tr>
+    </table><!-- move inc info module -->
+    
+</td>
+<td width="20"></td>
+</tr>
+</table>
+
+</td></tr>
+</table>
+</center>
+                   
+           
+
+	</script>
+	
+	
+
+
+
+
