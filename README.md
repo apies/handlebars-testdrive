@@ -1,4 +1,6 @@
-#Install
+#Install:
+
+
 ## Step 1
 * make a config directory at root of project
 * in the config directory drop the application.yml I emailed you
