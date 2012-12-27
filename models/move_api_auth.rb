@@ -18,7 +18,7 @@ module ApiWrapper
 
 	def get_token
 		@move_api = MoveApi.new(CONFIG['USERNAME'], CONFIG['PASSWORD'])
-    @token = @move_api.get_token
+    	@token = @move_api.get_token
 	end
 
 
@@ -50,8 +50,5 @@ class MoveApi
 
 end
 
-
-# result = MoveApi.get_listings
-# puts result.to_hash
 
 
