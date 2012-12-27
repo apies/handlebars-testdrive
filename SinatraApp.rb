@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/assetpack'
 require 'sinatra'
 require 'sass'
-require 'coffee_script'
+require 'coffee-script'
 require 'yaml'
 CONFIG = YAML.load(File.read(File.expand_path('./config/application.yml')))
 require './models/move_api_auth.rb'
