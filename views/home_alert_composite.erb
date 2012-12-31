@@ -284,28 +284,78 @@
             <b style="font-size:13px; color:#3f9301;">{{this.price}}</b><br />
             <font style="color:#808080;">{{this.beds}} Bed, {{this.baths}} Bath</font>
         </div>
-        <!-- price reduced tag -->
-        <table cellpadding="0" cellspacing="0">
-        	<tr><td bgcolor="#3f9200"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">PRICE&nbsp;REDUCED</div></td></tr>
-            <tr><td height="5"></td></tr>
-        </table><!-- price reduced tag -->
-                   
-        <!-- open house module -->
-        <table cellpadding="0" cellspacing="0">
-        	<tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
-        	<tr>
-            	<td width="1" bgcolor="#ffebb0"></td>
-            	<td width="138" bgcolor="#fffbed">
-                    <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
-                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
-                        <b>Open House:</b><br />
-                        {{this.list.date}}
-                    </div>
-            	</td>
-                <td width="1" bgcolor="#ffebb0"></td>
-            </tr>
-            <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
-        </table><!-- open house module -->
+                   <!-- price reduced tag -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td bgcolor="#3f9200"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">PRICE&nbsp;REDUCED</div></td></tr>
+                       <tr><td height="5"></td></tr>
+                   </table><!-- price reduced tag -->
+                            
+                   {{#if this.distressed}}
+                   <!-- foreclosure tag -->
+                   <table cellpadding="0" cellspacing="0">
+                    <tr><td bgcolor="#d17e47"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">FORECLOSURE</div></td></tr>
+                       <tr><td height="5"></td></tr>
+                   </table><!-- foreclosure tag -->
+                   {{/if}}
+                           
+                   <!-- new photo module -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td height="1" colspan="3" bgcolor="#e6e6e6"></td></tr>
+                       <tr>
+                           <td width="1" bgcolor="#e6e6e6"></td>
+                           <td width="138" bgcolor="#f4f3fb">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#525767; font-weight:bold; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                                   New Photo
+                               </div>
+                           </td>
+                           <td width="1" bgcolor="#e6e6e6"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#e6e6e6"></td></tr>
+                   </table><!-- new photo module -->
+                           
+                   <!-- additional attributes -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb1"></td></tr>
+                       <tr>
+                           <td width="1" bgcolor="#ffebb1"></td>
+                           <td width="138" bgcolor="#fffbed">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="2"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   Virtual Tour<br />
+                               </div>
+                                   <table cellpadding="0" cellspacing="0"><tr><td width="138" height="1"><img src="images/attribute_divider.gif" width="138" height="1" style="display:block;" /></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   New Photo<br />
+                               </div>
+                                   <table cellpadding="0" cellspacing="0"><tr><td width="138" height="1"><img src="images/attribute_divider.gif" width="138" height="1" style="display:block;" /></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   <br />
+                               </div>
+                                   <!-- additional attributes go here -->
+                           </td>
+                           <td width="1" bgcolor="#ffebb1"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb1"></td></tr>
+                   </table><!-- additional attributes -->
+                   {{#if this.next_open_house}}
+                   <!-- open house module -->
+                   <table cellpadding="0" cellspacing="0">
+                    <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                    <tr>
+                        <td width="1" bgcolor="#ffebb0"></td>
+                        <td width="138" bgcolor="#fffbed">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                                   <b>Open House:</b><br />
+                                   {{this.next_open_house.start_date}}
+                               </div>
+                        </td>
+                           <td width="1" bgcolor="#ffebb0"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                   </table><!-- open house module -->
+                   {{/if}}
         <!-- search result module -->
        
     </td>
@@ -394,23 +444,78 @@
                         <a href="#" style="color:#4679b8; text-decoration:underline;">Save Listing</a><br />
                         <font style="color:#666666;">{{this.address.line}}</font>
                     </div>
-                   
-                    <!-- open house module -->
-                    <table cellpadding="0" cellspacing="0">
-                    	<tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
-                    	<tr>
-                        	<td width="1" bgcolor="#ffebb0"></td>
-                        	<td width="138" bgcolor="#fffbed">
-                                <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
-                                <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
-                                    <b>Open House:</b><br />
-                                    {{filler.date}}
-                                </div>
-                        	</td>
-                            <td width="1" bgcolor="#ffebb0"></td>
-                        </tr>
-                        <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
-                    </table><!-- open house module -->
+                   <!-- price reduced tag -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td bgcolor="#3f9200"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">PRICE&nbsp;REDUCED</div></td></tr>
+                       <tr><td height="5"></td></tr>
+                   </table><!-- price reduced tag -->
+                            
+                   {{#if this.distressed}}
+                   <!-- foreclosure tag -->
+                   <table cellpadding="0" cellspacing="0">
+                    <tr><td bgcolor="#d17e47"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">FORECLOSURE</div></td></tr>
+                       <tr><td height="5"></td></tr>
+                   </table><!-- foreclosure tag -->
+                   {{/if}}
+                           
+                   <!-- new photo module -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td height="1" colspan="3" bgcolor="#e6e6e6"></td></tr>
+                       <tr>
+                           <td width="1" bgcolor="#e6e6e6"></td>
+                           <td width="138" bgcolor="#f4f3fb">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#525767; font-weight:bold; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                                   New Photo
+                               </div>
+                           </td>
+                           <td width="1" bgcolor="#e6e6e6"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#e6e6e6"></td></tr>
+                   </table><!-- new photo module -->
+                           
+                   <!-- additional attributes -->
+                   <table cellpadding="0" cellspacing="0">
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb1"></td></tr>
+                       <tr>
+                           <td width="1" bgcolor="#ffebb1"></td>
+                           <td width="138" bgcolor="#fffbed">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="2"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   Virtual Tour<br />
+                               </div>
+                                   <table cellpadding="0" cellspacing="0"><tr><td width="138" height="1"><img src="images/attribute_divider.gif" width="138" height="1" style="display:block;" /></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   New Photo<br />
+                               </div>
+                                   <table cellpadding="0" cellspacing="0"><tr><td width="138" height="1"><img src="images/attribute_divider.gif" width="138" height="1" style="display:block;" /></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#535768; font-weight:bold; margin-left:6px; margin-right:5px;">
+                                   <br />
+                               </div>
+                                   <!-- additional attributes go here -->
+                           </td>
+                           <td width="1" bgcolor="#ffebb1"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb1"></td></tr>
+                   </table><!-- additional attributes -->
+                   {{#if this.next_open_house}}
+                   <!-- open house module -->
+                   <table cellpadding="0" cellspacing="0">
+                    <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                    <tr>
+                        <td width="1" bgcolor="#ffebb0"></td>
+                        <td width="138" bgcolor="#fffbed">
+                               <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
+                               <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
+                                   <b>Open House:</b><br />
+                                   {{this.next_open_house.start_date}}
+                               </div>
+                        </td>
+                           <td width="1" bgcolor="#ffebb0"></td>
+                       </tr>
+                       <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
+                   </table><!-- open house module -->
+                   {{/if}}
                     <!-- search result module -->
                 </td>
                 <td width="10"></td>
@@ -485,11 +590,13 @@
                        <tr><td height="5"></td></tr>
                    </table><!-- price reduced tag -->
                             
+                   {{#if this.distressed}}
                    <!-- foreclosure tag -->
                    <table cellpadding="0" cellspacing="0">
                    	<tr><td bgcolor="#d17e47"><div style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:13px; color:#ffffff; margin-left:3px; margin-right:3px;">FORECLOSURE</div></td></tr>
                        <tr><td height="5"></td></tr>
                    </table><!-- foreclosure tag -->
+                   {{/if}}
                            
                    <!-- new photo module -->
                    <table cellpadding="0" cellspacing="0">
@@ -531,7 +638,7 @@
                        </tr>
                        <tr><td height="1" colspan="3" bgcolor="#ffebb1"></td></tr>
                    </table><!-- additional attributes -->
-                            
+                   {{#if this.next_open_house}}
                    <!-- open house module -->
                    <table cellpadding="0" cellspacing="0">
                    	<tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
@@ -541,13 +648,14 @@
                                <table cellpadding="0" cellspacing="0"><tr><td width="1" height="6"></td></tr></table>
                                <div style="font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:13px; color:#3b3f4d; margin-left:6px; margin-right:5px; margin-bottom:6px;">
                                    <b>Open House:</b><br />
-                                   Sat 8/7, 2 PM - 4 PM
+                                   {{this.next_open_house.start_date}}
                                </div>
                        	</td>
                            <td width="1" bgcolor="#ffebb0"></td>
                        </tr>
                        <tr><td height="1" colspan="3" bgcolor="#ffebb0"></td></tr>
                    </table><!-- open house module -->
+                   {{/if}}
                    <!-- search result module -->
                </td>
                <td width="10"></td>
