@@ -2,10 +2,12 @@ require 'sinatra/base'
 require 'sinatra/assetpack'
 require 'sinatra'
 require 'sass'
-require 'coffee_script'
+require 'coffee-script'
 require 'yaml'
+require 'pry'
 CONFIG = YAML.load(File.read(File.expand_path('./config/application.yml')))
-require './models/move_api_auth.rb'
+#binding.pry
+require './models/models.rb'
 require 'handlebars'
 
 class App < Sinatra::Base
@@ -38,7 +40,7 @@ class App < Sinatra::Base
   end
 
   get '/my_mail' do
-    @result = MoveApi.get_listings.to_hash
+    @result = Move.get_listings(:distressed => 'foreclosure').to_hash
     @result['filler'] = {'number' => 7, 'date' => 'Jan 17 1984 1pm'}
     @result['listings'] = @result['listings'][0...4]
     
@@ -51,7 +53,7 @@ class App < Sinatra::Base
   end
 
   get '/my_server_mail' do
-    @result = MoveApi.get_listings.to_hash
+    @result = Move.get_listings(:distressed => 'foreclosure').to_hash
     @result['filler'] = {'number' => 7, 'date' => 'Jan 17 1984 1pm'}
     @result['listings'] = @result['listings'][0...4]
     
