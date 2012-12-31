@@ -18,7 +18,7 @@ class MoveApi
 	end
 
 	def get_listings(params)
-		self.class.get("/listings/search?&api_token=#{@token}&client_id=jsc", params)
+		self.class.get("/listings/search?&api_token=#{@token}&client_id=jsc", :query => params)
 	end
 
 end
