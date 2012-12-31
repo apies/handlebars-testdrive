@@ -40,7 +40,7 @@ class App < Sinatra::Base
   end
 
   get '/my_mail' do
-    @result = Move.get_listings(:distressed => 'foreclosure' , :city => 'San Jose').to_hash
+    @result = Move.get_listings(:open_house_date_min => '1-1-2012').to_hash
     @result['filler'] = {'number' => 7, 'date' => 'Jan 17 1984 1pm'}
     @result['listings'] = @result['listings'][0...4]
     

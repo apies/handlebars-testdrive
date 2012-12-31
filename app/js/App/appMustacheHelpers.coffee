@@ -7,3 +7,17 @@ Handlebars.registerHelper("renderSelect", (valChoices, currentVal, cssAttributes
 	selectString += "<option #{attrs} selected=\"selected\"value=\"#{currentVal}\">#{currentVal}</option>"
 	return "#{selectString}</select>"
 )
+
+dateParser = (dateString) ->
+	date = new Date(dateString)
+	if parseInt(date.toUTCString().match(/(\d{2}):/)[1]) > 12
+		dateAttribute = 'PM'
+	else
+		dateAttribute = 'AM'
+	"#{date.toDateString()} #{date.toTimeString().match(/[1-9]+:\d+/)[0]} #{dateAttribute}"
+
+
+Handlebars.registerHelper('humanDate', dateParser)
+
+
+
