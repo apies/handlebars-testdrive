@@ -34,11 +34,15 @@ class AuthView extends Backbone.View
 roleName = 'PRO'
 sequenceNumber = 'ssl'
 
+#Handlebars.registerPartial("listing", $('#listing_template').html() )
 class MailTemplateView extends Backbone.View
 	el: '#targetDiv'
 
 	initialize: ->
 		@template = $('#blue_bar').html()
+		Handlebars.registerPartial("listing", $('#listing_template').html() )
+		Handlebars.registerPartial('thing', '<h1>HELLO NAME {{name}}</h1>')
+		Handlebars.registerPartial("search", $('#saved_search_template').html() )
 		#@header_bars_template = Handlebars.compile($('#header_bars').html())
 		#@first_listings_template = Handlebars.compile($('#listings_first').html())
 		#@saved_searches_template = Handlebars.compile($('#saved_searches').html())
@@ -68,6 +72,7 @@ class MailTemplateView extends Backbone.View
 
 
 $(document).ready ->
+	Handlebars.registerPartial("listing", $('#listing_template').html() )
 	@app = window.app ? {}
 	@app.authView = new AuthView()
 	@app.MailTemplateView = MailTemplateView
