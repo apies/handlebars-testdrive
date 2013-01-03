@@ -16,8 +16,21 @@ dateParser = (dateString) ->
 		dateAttribute = 'AM'
 	"#{date.toDateString()} #{date.toTimeString().match(/[1-9]+:\d+/)[0]} #{dateAttribute}"
 
+humanMoney  = (moneyString) ->
+	splitString = moneyString.toString().split("").reverse() 
+	n = 0
+	formattedMoney = splitString.reduce (formattedString, digit) ->
+		n += 1
+		if n%3 is 0 and n < splitString.length
+			"#{formattedString},#{digit}"
+		else
+			"#{formattedString}#{digit}"
+	"$#{formattedMoney.split("").reverse().join("")}" 
+
 
 Handlebars.registerHelper('humanDate', dateParser)
+
+Handlebars.registerHelper('humanMoney', humanMoney)
 
 
 

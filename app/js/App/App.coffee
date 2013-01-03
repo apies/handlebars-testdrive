@@ -8,6 +8,10 @@
 @App.Router.map( (match) ->
 	match("/").to("home")
 )
+@App.HomeView = Ember.View.extend(
+	click: (evt) ->
+		alert("you clicked me!")
+)
 
 @App.HomeRoute = Ember.Route.extend(
 
@@ -16,13 +20,12 @@
 	# 	@render('home')
 	setupControllers: (controller) ->
 		controller.set('blobs', ["blob1", "blob2", "blob3"])
-		controller.set('listings', App.Listing.find())
+		#controller.set('listings', App.Search.find(1).get('listings'))
 )
 
 @App.HomeController = Ember.Controller.extend(
 	blobs: null
 	listings: null
-
 )
 
 @App.Search = DS.Model.extend(

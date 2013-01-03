@@ -23,7 +23,7 @@
      <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-bottom:4px;">
         <a href="#" style="font-size:13px; color:#477aba; text-decoration:underline;">{{this.address.line}} </a><br />
          {{this.address.city}}, {{this.address.state}}<br />
-         <b style="font-size:13px; color:#3f9301;">{{this.price}}</b><br />
+         <b style="font-size:13px; color:#3f9301;">{{#humanMoney this.price}}{{/humanMoney}}</b><br />
          <font style="color:#808080;">{{this.beds}} Bed, {{this.baths}} Bath</font><br />
          <a href="#" style="color:#4679b8; text-decoration:underline;">Save Listing</a><br />
          <font style="color:#666666;">10 characters</font>
@@ -546,7 +546,7 @@
                       <div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#999999; margin-bottom:4px;">
                       	<a href="#" style="font-size:13px; color:#477aba; text-decoration:underline;">{{this.address.line}}</a><br />
                           {{this.address.city}}, {{this.address.state}}<br />
-                          <b style="font-size:13px; color:#ff0000;">Sold for {{this.price }} </b><br />
+                          <b style="font-size:13px; color:#ff0000;">Sold for {{#humanMoney this.price }} {{/humanMoney}} </b><br />
                           <font style="font-size:11px; color:#a9a9a9;">on {{this.list_date}}</font><br />
                           <font style="color:#808080;">{{this.beds}} Bed, {{listing.baths}} Bath</font><br />
                           <font style="color:#666666;">{{this.agent.name}}</font>
