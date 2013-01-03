@@ -1,4 +1,30 @@
+<h3>Ember App</h3>
+
+<script id="application" type="text/x-handlebars" data-template-name="application">
+<div class="content">
+  <p>initialized?</p>
+  {{outlet}}
+</div>
+</script>
+
+
+<script type="text/x-handlebars" data-template-name="home">
+<h3>Blobs</h3>
+
+<ul>
+  {{#each blob in blobs}}
+  <li>{{blob}}</li>
+  {{/each}}
+</ul>
+
+
+</script>
+
+
+<!-- 
 <h1>Hello Index</h1>
+
+
 
 
 <form id="auth_form">
@@ -9,4 +35,4 @@
 	</br>
 	<p>password</p>
 	<input type="text" id="password"></input>
-</form>
+</form> -->

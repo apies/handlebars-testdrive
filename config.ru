@@ -1,2 +1,2 @@
-require './ReportApp.rb'
+require './SinatraApp.rb'
 run App

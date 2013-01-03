@@ -9,6 +9,7 @@ CONFIG = YAML.load(File.read(File.expand_path('./config/application.yml')))
 #binding.pry
 require './models/models.rb'
 require 'handlebars'
+require 'json'
 
 class App < Sinatra::Base
   
@@ -45,8 +46,8 @@ class App < Sinatra::Base
     @result['listings'] = @result['listings'][0...4]
     
     @result['saved_searches'] = [
-      {:name => 'Dream Houses', :query_string => 'All Houses in Saratoga CA 5 rooms 1 pool close to hiking', :listings => @result['listings'] },
-      {:name => 'Taco Stands', :query_string => 'All Houses that smell LIKE %tacos% ', :listings => @result['listings'] }
+      {:name => 'Dream Houses', :query_string => 'All Houses in Saratoga CA', :listings => @result['listings'] },
+      {:name => 'Taco Stands', :query_string => 'All Houses that smell ', :listings => @result['listings'] }
     ]
     @result
     erb :home_alert_composite
